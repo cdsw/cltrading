@@ -1,0 +1,13 @@
+ths/*.lo*
+ths/*.pdf
+ths/*.aux
+ths/*/*.aux
+ths/*/*.bbl
+ths/*/*.blg
+ths/*/*.log
+ths/*.bbl
+ths/*.blg
+ths/*.gz
+ths/*.toc
+models/
+XX*

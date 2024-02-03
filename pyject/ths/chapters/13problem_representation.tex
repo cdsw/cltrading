@@ -1,0 +1,128 @@
+\chapter{Requirements and Analysis}
+\label{Requirement and Analysis}
+% no \IEEEPARstart
+This chapter provides more detailed insights on the requirements and the flow of the system using activity diagrams. Requirements are represented in a form of FURPS+ model (Table~\ref{requirements table}) which can aid in discovering potential needs that are both functional and non-functional. As the system contains two major subsystems communicating through Wi-Fi protocol, some activity diagrams contain usages of signals to emphasize that some actions are not instantaneous in the system.
+
+\section{Requirements}
+\begin{center}
+\begin{longtable} {|p{0.03\linewidth}|p{0.72\linewidth}|p{0.16\linewidth}|}
+%\renewcommand{\arraystretch}{1.3}
+%\caption[Feasible triples for a highly variable Grid]{Feasible triples for 
+%highly variable Grid, MLMMH.} \label{grid_mlmmh} \\
+\caption{Table of Requirements}
+\label{requirements table} \\
+%\centering
+
+\hline \multicolumn{1}{|c|}{\textbf{No}} & \multicolumn{1}{c|}{\textbf{Requirement}} & \multicolumn{1}{c|}{\textbf{Type}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from the previous page}} \\
+\hline \multicolumn{1}{|c|}{\textbf{No}} &
+\multicolumn{1}{c|}{\textbf{Requirement}} &
+\multicolumn{1}{c|}{\textbf{Type}} \\ \hline 
+\endhead
+
+%\hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+%\endfoot
+
+%\hline \hline
+%\endlastfoot
+
+%\begin{tabular}{|p{0.03\linewidth}|p{0.8\linewidth}|p{0.1\linewidth}|}
+\hline
+%\bfseries No & \bfseries Requirement & \bfseries Type\\
+%\hline\hline
+1 & The luggage shall be able to follow the user. & Functional\\	\hline
+2 & User shall be able to use multiple luggage at once. & Functional\\	\hline
+3 & User shall be able to manually control the movement of the luggage via a mobile application. & Functional\\	\hline
+4 & User shall be able to control the preferable distance between the user and the luggage. & Functional\\	\hline
+5 & The luggage shall be able to calculate the relative direction between the luggage and the user. & Functional\\	\hline
+6 & The luggage shall be able to calculate user's position relative to the luggage. & Functional\\	\hline
+7 & The luggage shall notify the user when the user is out of reach. & Functional\\	\hline
+8 & User shall be able to control the luggage via smartphone. & Functional\\	\hline
+9 & User shall be able to start and stop the luggage from following. & Functional\\	\hline
+10 & User shall be able to manually set off the alarm on the luggage. & Functional\\	\hline
+11 & User shall not have to carry any peripheral device except for a smartphone. & Usability\\	\hline
+12 & The system shall persist while the relative distance is less than 3 meters. & Reliability\\	\hline
+13 & The luggage shall reconnect to the user's smartphone within 3 seconds after it reenters the reachable range. & Reliability\\	\hline
+14 & The luggage shall be able to calculate relative position in free space with the tolerance of $ \pm $0.3 meters. & Performance\\	\hline
+15 & The system shall support at least two luggage at once. & Performance\\	\hline
+16 & The luggage shall support one user at a time. & Performance\\	\hline
+17 & The system shall be compatible Android 4.1 or later. & Supportability\\	\hline
+18 & The luggage shall not connect to other smartphones while the current connection is not terminated. & Security\\	\hline
+%\end{tabular}
+\end{longtable}
+\end{center}
+
+\section{Use Case Diagram}
+\begin{figure}[H]
+\centering
+\includegraphics{graphics/usecase}
+\caption{Use Case diagram}
+\label{fig:usecase}
+\end{figure}
+\pagebreak
+\section{Activity Diagrams}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.55\textwidth}]{graphics/activity_01}
+\caption{Connecting to luggage}
+\label{fig:activity_01}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.55\textwidth}]{graphics/activity_02}
+\caption{Disconnecting from luggage}
+\label{fig:activity_02}
+\end{figure}
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_03}
+\caption{Activating following mode}
+\label{fig:activity_03}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_04}
+\caption{Deactivating following mode}
+\label{fig:activity_04}
+\end{figure}
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_05}
+\caption{Setting preferable distance}
+\label{fig:activity_05}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_06}
+\caption{Calculating relative distance}
+\label{fig:activity_06}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.63\textwidth}]{graphics/activity_07}
+\caption{Determining following direction}
+\label{fig:activity_07}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.63\textwidth}]{graphics/activity_08}
+\caption{Controlling movement}
+\label{fig:activity_08}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_09}
+\caption{Activating alarm}
+\label{fig:activity_09}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width={0.8\textwidth}]{graphics/activity_10}
+\caption{Deactivating alarm}
+\label{fig:activity_10}
+\end{figure}

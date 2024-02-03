@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper, oneside]{mitthesis}
+\usepackage{lgrind, graphicx, float, amsmath, caption, afterpage}
+\usepackage{mathptmx}
+
+\usepackage{longtable}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{nth}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+\usepackage{subfloat}
+
+\usepackage{url}
+\usepackage{bm}
+
+\usepackage{setspace}
+
+\usepackage{verbatim}
+
+\usepackage{multirow}
+\usepackage{threeparttable}
+
+\usepackage{rotating}
+\usepackage{algorithm2e}
+
+%\usepackage[backend=biber,style=IEEEtran,sorting=none]{biblatex}
+%\usepackage{natbib}
+%\usepackage[nottoc,notlof,notlot]{tocbibind} 
+%\renewcommand\bibname{References}
+%\renewcommand\refname{Reference}
+%\renewcommand{\contentsname}{whatever}
+%\renewcommand{\bibname}{whatever}
+%\renewcommand{\refname}{whatever}
+
+\usepackage{enumitem}
+\setlistdepth{6}
+\newlist{taxon}{enumerate}{6}
+\setlist[taxon,1]{label=(\arabic*)}
+\setlist[taxon,2]{label=(\Roman*)}
+\setlist[taxon,3]{label=(\Alph*)}
+\setlist[taxon,4]{label=(\roman*)}
+\setlist[taxon,5]{label=(\alph*)}
+\setlist[taxon,6]{label=(\arabic*)}
+
+\pagestyle{plain}
+\DeclareMathOperator*{\argmax}{argmax}
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+
+% \typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to
+% process all files:}
+% \def\all{all}
+% \ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+    
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{sectsty}
+\usepackage{lipsum}
+
+\chapterfont{\centering}
+    
+\begin{document}
+
+%\setstretch{1.75}
+
+\include{misc/01cover}
+\include{misc/02copyright}
+%\afterpage{\blankpage}
+%\include{misc/certification}
+%\afterpage{\blankpage}
+\pagenumbering{Roman}
+\include{misc/04abstract}
+\include{misc/05acknowledgments}
+%\afterpage{\blankpage}
+
+\pagestyle{plain}
+
+% Variables & Commands
+\newcommand{\bestone}{BEST I}
+
+\renewcommand*\contentsname{Table of Contents}
+\include{misc/06contents}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset{0cm}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[R]{\thepage}
+\fancypagestyle{plain}{%
+   \fancyhf{}%
+   \fancyhead[R]{\thepage}%
+}
+
+\pagenumbering{arabic}
+\include{chapters/01introduction}
+\include{chapters/03literature_review}
+\include{chapters/05background_knowledge}
+\include{chapters/10methodology}
+% \include{chapters/13problem_representation}
+% \include{chapters/16state_actor}
+% \include{chapters/19proposed_combination}
+% \include{chapters/22performance_metrics}
+\include{chapters/30experimentation}
+\include{chapters/38discussion}
+\include{chapters/46conclusion}
+
+\begin{appendix}
+\include{chapters/90terms}
+
+\end{appendix}
+
+% \include{misc/13biblio}
+
+%\renewcommand\bibname{References}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{IEEEtran}
+% \bibliographystyle{unsrt}
+% \bibliographystyle{unsrt}
+% \bibliographystyle{plainnat} % or try abbrvnat or unsrtnat
+% \nocite{*}
+\bibliography{misc/bibliography.bib}
+
+\end{document}
