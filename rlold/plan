@@ -1,0 +1,30 @@
+# 0. Get BTC data (bull, bear, crab) in minute data ONLY.
+# 3. Make it stationary, data: movement + indicators.
+# 6. Quantize the data to get multi-minute data frames.
+# 9. Add or subtract indicators.
+# 12. Get Stable-baselines3 to do DQN, PPO-disc, PPO-cont
+# 16. Test with various coins
+# 18. Adjust parameters
+# 23. Construct trading bot, TP, SL, leverage
+# 29. Connect to trading API
+
+Inputs:
+- closing price
+- price_delta (CLOSE/OPEN - 1)
+- price_amplitude (HIGH/LOW - 1)
+- EMA20
+- EMA50
+- EMA100
+- Current holding
+- Buy price
+- dollar_asset //remaining asset to buy the asset
+Actions:
+- long x units with leverage y
+- short x units with leverage y
+- hold
+- close
+Rewards:
+- if closing a position results in n% above buy-and-hold strategy, then get a  positive reward
+- if closing a position results in n% lower than buy-and-hold strategy, then get a negative reward
+- a penalty of 0.1% of transaction value for each transaction
+- if idling too long without a position, get a small negative reward

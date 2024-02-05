@@ -1,7 +1,6 @@
 */__pycache__
 */models
-*/XXexp
-models/
-XX*
+*models*
 rl*/resultsnew/*photo
 rl*/resultsnew/model
+*obsolete*
