@@ -1,8 +1,8 @@
-# 0. Get BTC data (bull, bear, crab) in minute data ONLY.
-# 3. Make it stationary, data: movement + indicators.
+# // 0. Get BTC data (bull, bear, crab) in minute data ONLY.
+# // 3. Make it stationary, data: movement + indicators.
 # 6. Quantize the data to get multi-minute data frames.
 # 9. Add or subtract indicators.
-# 12. Get Stable-baselines3 to do DQN, PPO-disc, PPO-cont
+# 12. Get Stable-baselines3 to do DQN, PPO-disc, PPO-cont, A2C-disc, A2C-cont
 # 16. Test with various coins
 # 18. Adjust parameters
 # 23. Construct trading bot, TP, SL, leverage
