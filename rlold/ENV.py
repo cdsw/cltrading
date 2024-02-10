@@ -10,3 +10,5 @@ MINIMUM_TRANSACTION_DOLLAR = 5
 PRECISION = 8 # precision for unit
 
 REWARD = {'open': 0, 'hold': 0, 'close': 0}
+
+INTERVAL = 1
