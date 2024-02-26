@@ -12,3 +12,4 @@ PRECISION = 8 # precision for unit
 REWARD = {'open': 5, 'hold': 1, 'close': 1, 'insufficient': -1}
 
 INTERVAL = 100000
+EPISODE = 10
