@@ -16,6 +16,6 @@ MINIMUM_TRANSACTION_DOLLAR = 5
 PRECISION = 8 # precision for unit
 
 INTERVAL = 100000
-EPISODE = 4
+EPISODE = 8
 
 LOG_LOCATION = "./results/logs_"

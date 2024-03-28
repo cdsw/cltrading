@@ -8,23 +8,35 @@
 # 23. Construct trading bot, TP, SL, leverage
 # 29. Connect to trading API
 
+
+
+URGENT:
+CHANGE OBSERVATION FROM [1,2,3,4,5] at STEP 1 to [-3,-2,-1,0,1] at STEP 1!!!!!
+
+
 Inputs:
-- closing price
+# - closing price 
+- volume normalized
 - price_delta (CLOSE/OPEN - 1)
 - price_amplitude (HIGH/LOW - 1)
-- EMA20
-- EMA50
-- EMA100
-- Current holding
-- Buy price
-- dollar_asset //remaining asset to buy the asset
+- close over low
+- EMA20 over close
+- EMA50 over close
+- EMA100 over close
+- profit movement
+- benchmark movement
+# - Current holding 
+# - Average buy price (if any position) over current price 
+# - dollar_asset //remaining asset to buy the asset 
 Actions:
 - long x units with leverage y
 - short x units with leverage y
 - hold
 - close
+# - LATER: TP/SL 
+
 Rewards:
-- if closing a position results in n% above buy-and-hold strategy, then get a  positive reward
+# - if closing a position results in n% above buy-and-hold strategy, then get a  positive reward
 - if closing a position results in n% lower than buy-and-hold strategy, then get a negative reward
 - a penalty of 0.1% of transaction value for each transaction
-- if idling too long without a position, get a small negative reward
+- if idling too long without a position, get a small negative reward 
