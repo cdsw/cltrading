@@ -47,13 +47,20 @@ def add_ema(df, normalize=False, ma_widths=EMA):
       res[f'EMA_{x}'] = res[f'EMA_{x}'] / res['close']
   return res
 
+def loadDataSource(dataset_train, TEST):
+  if TEST == 'short':
+    data_source = f'../data/{dataset_train}-short.csv'
+  elif TEST == 'long':
+    data_source = f'../data/{dataset_train}-long.csv'
+  else:
+    data_source = f'../data/{dataset_train}-full.csv'
+  return data_source
 
-
-# df = pd.DataFrame({
-#   'no': [1,2,3,4,5,6,7,8],
-#   'xdata': [1,10,20,30,40,50,60,70]
-# })
-
-# df = add_ema(df,[5])
-
-# print(df)
+def getTrainingDivisor(TEST):
+  if TEST == 'short':
+    TRAINING_DIVISOR = 2
+  elif TEST == 'long':
+    TRAINING_DIVISOR = 50
+  else:
+    TRAINING_DIVISOR = 100
+  return TRAINING_DIVISOR

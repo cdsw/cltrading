@@ -1,11 +1,12 @@
 INITIAL_ACCOUNT_BALANCE = 100000
-WINDOW_SIZE = 1
+WINDOW_SIZE = 5
 EMA = [8,28,88]
 
 # FEATURES = ['close', 'volume', 'delta', 'amplitude', 'close_over_low', ]
 FEATURES = ['volume', 'delta', 'amplitude', 'close_over_low']
 for e in EMA:
   FEATURES.append(f'EMA_{e}')
+ADDITIONAL_FEATURES = ['benchmark_movement', 'profit_movement']
 
 LEN_FEATURES = len(FEATURES)
 ACTIONS = ['long', 'short', 'hold', 'close']

@@ -8,12 +8,6 @@
 # 23. Construct trading bot, TP, SL, leverage
 # 29. Connect to trading API
 
-
-
-URGENT:
-CHANGE OBSERVATION FROM [1,2,3,4,5] at STEP 1 to [-3,-2,-1,0,1] at STEP 1!!!!!
-
-
 Inputs:
 # - closing price 
 - volume normalized
@@ -40,3 +34,6 @@ Rewards:
 - if closing a position results in n% lower than buy-and-hold strategy, then get a negative reward
 - a penalty of 0.1% of transaction value for each transaction
 - if idling too long without a position, get a small negative reward 
+
+/DONE
+# CHANGE OBSERVATION FROM [1,2,3,4,5] at STEP 1 to [-3,-2,-1,0,1] at STEP 1!!!!!
