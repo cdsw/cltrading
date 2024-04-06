@@ -10,7 +10,7 @@ ADDITIONAL_FEATURES = ['benchmark_movement', 'profit_movement']
 
 LEN_FEATURES = len(FEATURES)
 ACTIONS = ['long', 'short', 'hold', 'close']
-LEVERAGE = [1]
+LEVERAGE = 5 # maximum leverage
 TRADING_FEE_OPEN = 0.0005 # portion
 TRADING_FEE_CLOSE = 0.0005 # portion
 MINIMUM_TRANSACTION_DOLLAR = 5
