@@ -1,3 +1,19 @@
+TO_DO
+- Add buy.sell at plot
+- Fix 200 df update cutoff
+- Add TP/SL
+
+
+
+
+
+
+
+
+
+
+
+
 # // 0. Get BTC data (bull, bear, crab) in minute data ONLY.
 # // 3. Make it stationary, data: movement + indicators.
 # 6. Quantize the data to get multi-minute data frames.
