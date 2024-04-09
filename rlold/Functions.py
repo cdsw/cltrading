@@ -3,6 +3,7 @@ import pandas_ta as ta
 from ENV import *
 import matplotlib.pyplot as plt
 import numpy as np
+import plotly.graph_objs as go
 
 def getStationary(df, fn, scaling=True):
   df['delta'] = (df['close'] / df ['open']) - 1
@@ -64,3 +65,40 @@ def getTrainingDivisor(TEST):
   else:
     TRAINING_DIVISOR = 100
   return TRAINING_DIVISOR
+
+
+def _helperPlotActions(res, color, symbol, size, name):
+  x_data = [entry['idx'] for entry in res]
+  y_data = [float(entry['price']) for entry in res]
+  marker_text = [entry['caption'] for entry in res]
+  plotter = go.Scatter(x=x_data, y=y_data, mode='markers+text', marker=dict(color=color, symbol=symbol, size=size), text=marker_text, textposition="top center", name=name)
+  return plotter
+
+def translateActionPlot(aset, init_price):
+  res_short = []
+  res_long = []
+  res_close = []
+  idx = 0
+  for x in aset:
+    if x == 'hold':
+      pass
+    else:
+      tx = x.split(' ')
+      caption, price = tx[0], tx[3]
+      price_clean = float(price)/float(init_price)
+      if 'close' in x:
+        res_close.append({'caption': "", 'price': price_clean, 'idx': idx})
+      elif 'short' in x:
+        leverage = caption.split('×')[0]
+        res_short.append({'caption': leverage, 'price': price_clean, 'idx': idx})
+      elif 'long' in x:
+        leverage = caption.split('×')[0]
+        res_long.append({'caption': leverage, 'price': price_clean, 'idx': idx})
+    idx += 1
+
+  em_dict = dict()
+  em_dict['long'] = _helperPlotActions(res_long, '#0e874a', 'triangle-up', 8, "Long")
+  em_dict['short'] = _helperPlotActions(res_short, '#ed077a', 'triangle-down', 8, "Short")
+  em_dict['close'] = _helperPlotActions(res_close, '#0776ed', 'circle', 6, "Close")
+
+  return em_dict
